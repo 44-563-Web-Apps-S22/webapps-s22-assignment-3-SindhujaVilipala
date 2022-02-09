@@ -61,6 +61,22 @@
             <td>  $20 </td>
         </tr>
         </table>
+        <hr>
+        <h1> Code Display</h1>
+        <h4> Data Structures </h4>
+        <blockquote cite="https://brilliant.org/wiki/sparse-table/#:~:text=Sparse%20Table%20is%20a%20data,compared%20to%20other%20data%20structures.">
+            Sparse Table is a data structure that answers static Range Minimum Query (RMQ). 
+            It is recognized for its relatively fast query and short implementation compared to other data structures.
+         </blockquote>
+         <a href="https://brilliant.org/wiki/sparse-table/#:~:text=Sparse%20Table%20is%20a%20data,compared%20to%20other%20data%20structures."> About Sparse Table</a>
+        <pre>
+            for (int i = 0; i < N; i++)
+                st[i][0] = f(array[i]);
+
+            for (int j = 1; j <= K; j++)
+                 for (int i = 0; i + (1 << j) <= N; i++)
+                     st[i][j] = f(st[i][j-1], st[i + (1 << (j - 1))][j - 1]);
+        </pre>
 </body>
 
 </html>
